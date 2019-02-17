@@ -1,0 +1,26 @@
+Package: sc
+Title: Create an 'igraph' Subclass to Encode Simplicial Complexes
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Jason Cory",
+           family = "Brunson",
+           role = c("aut", "cre"),
+           email = "cornelioid@gmail.com")
+Description: This helper package creates an S3 class 'sc' that is a subclass
+  of 'igraph' used to encode simplicial complexes irredundantly as bipartite
+  graphs.
+Depends:
+  R (>= 3.3.2),
+  igraph
+Imports:
+  methods,
+  graphics,
+  grDevices,
+  colorspace,
+  viridis,
+  tibble
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.0
