@@ -25,6 +25,7 @@
 #' @param vertices,simplices Numeric vertex IDs or character names of nodes of
 #'   \code{sc} whose incident nodes are desired (if any). Defaults to
 #'   \code{NULL}.
+#' @example inst/examples/ex-wiki.r
 NULL
 
 #' @rdname simplices
