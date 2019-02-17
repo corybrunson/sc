@@ -1,0 +1,41 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# **sc**: simplicial complexes encoded as bipartite graphs
+
+**sc** is a convenience package for encoding simplicial complexes in R as bipartite graphs using the **igraph** package. It is intended for temporary use, until superior functionality and perforance are achieved by other medium-level packages, for example an R interface to [the GUDHI C++ library](http://gudhi.gforge.inria.fr/) --- or until i become aware of them!
+
+## Installation
+
+Install the package from GitHub using [the **remotes** package](https://github.com/r-lib/remotes):
+
+``` r
+remotes::install_github("corybrunson/sc")
+```
+
+## Example
+
+A popular illustration from Wikimedia Commons provides an illustration:
+
+```{r example}
+library(sc)
+# load data
+data(wiki_sc)
+# inspection and visualization
+print(wiki_sc)
+plot(wiki_sc, vertex.label = NA)
+# vertices and simplices
+vertices(wiki_sc)
+simplices(wiki_sc)
+```

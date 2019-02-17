@@ -1,2 +1,4 @@
+^data-raw$
+^README\.Rmd$
 ^sc\.Rproj$
 ^\.Rproj\.user$
