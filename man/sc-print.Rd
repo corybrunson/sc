@@ -15,8 +15,8 @@ complex.}
 }
 \description{
 These functions adapt \code{\link[tibble:format.tbl]{tibble::format.tbl()}},
-\code{\link[tibble:print.tbl]{tibble::print.tbl()}}, and the unexported function
-\code{node_tibble()} from \strong{\link[tidygraph:tidygraph]{tidygraph::tidygraph}} to conveniently display data separately on the
+\code{\link[tibble:print.tbl]{tibble::print.tbl()}}, and the unexported function \code{node_tibble()} from
+\strong{\link[tidygraph:tidygraph]{tidygraph::tidygraph}} to conveniently display data separately on the
 observation and cluster nodes of the bipartite \link[igraph:igraph]{igraph::igraph} object that
 encodes a simplicial complex.
 }
@@ -27,8 +27,8 @@ data(wiki_sc)
 print(wiki_sc)
 plot(wiki_sc, vertex.label = NA)
 # vertices and simplices
-vertices(wiki_sc)
-simplices(wiki_sc)
-vertices(wiki_sc, simplices = letters[1:3])
-simplices(wiki_sc, vertices = 1:5)
+sc_vertices(wiki_sc)
+sc_simplices(wiki_sc)
+sc_vertices(wiki_sc, simplices = letters[1:3])
+sc_simplices(wiki_sc, vertices = 1:5)
 }

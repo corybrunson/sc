@@ -43,7 +43,7 @@ sc_from_data_frame <- function(d, vertices = NULL, reduce = FALSE) {
   )
   g <- graph_from_data_frame(d, directed = FALSE, vertices = nodes)
   class(g) <- c("sc", class(g))
-  if (reduce) g <- reduce_sc(g)
+  if (reduce) g <- sc_reduce(g)
   g
 }
 
@@ -84,7 +84,7 @@ new_names <- function(n, avoid = NULL) {
 
 #' @rdname create
 #' @export
-reduce_sc <- function(sc) {
+sc_reduce <- function(sc) {
   # set nodes
   s <- which(vertex_attr(sc, "type"))
   d <- degree(sc, s)

@@ -4,14 +4,14 @@
 \alias{create}
 \alias{sc_from_data_frame}
 \alias{sc_from_list}
-\alias{reduce_sc}
+\alias{sc_reduce}
 \title{Creating simplicial complexes}
 \usage{
 sc_from_data_frame(d, vertices = NULL, reduce = FALSE)
 
 sc_from_list(l, vertices = NULL, reduce = FALSE)
 
-reduce_sc(sc)
+sc_reduce(sc)
 }
 \arguments{
 \item{d}{A data frame of vertex-face membership with columns \code{vertex} and
@@ -42,6 +42,6 @@ x <- list(a = 1:4, b = 3:5, c = c(3,6), d = 7, e = c(3,6), f = c(3:5, 7))
 (sc <- sc_from_list(x))
 plot(sc)
 # further reduction can be done by testing for subset relations among the faces
-(rsc <- reduce_sc(sc))
+(rsc <- sc_reduce(sc))
 plot(rsc)
 }

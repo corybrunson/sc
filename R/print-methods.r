@@ -1,8 +1,8 @@
 #' @title Printing simplicial complexes
 #'
 #' @description These functions adapt [tibble::format.tbl()],
-#'   [tibble::print.tbl()], and the unexported function
-#'   `node_tibble()` from **[tidygraph::tidygraph]** to conveniently display data separately on the
+#'   [tibble::print.tbl()], and the unexported function `node_tibble()` from
+#'   **[tidygraph::tidygraph]** to conveniently display data separately on the
 #'   observation and cluster nodes of the bipartite [igraph::igraph] object that
 #'   encodes a simplicial complex.
 #'
@@ -18,7 +18,7 @@ NULL
 #' @export
 print.sc <- function(x, ...) {
   tbl <- tibble::as_tibble(c(
-    list(.vid = as.integer(V(x))),
+    list(.id = as.integer(V(x))),
     igraph::vertex_attr(x)
   ))
   arg_list <- list(...)

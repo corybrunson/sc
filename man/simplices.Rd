@@ -2,20 +2,38 @@
 % Please edit documentation in R/simplices.r
 \name{simplices}
 \alias{simplices}
-\alias{vertices}
+\alias{sc_vertices}
+\alias{sc_simplices}
+\alias{sc_faces}
+\alias{sc_has_simplex}
+\alias{sc_simplex}
+\alias{sc_intersection}
+\alias{sc_nearness}
 \title{Vertices and simplices af a simplicial complex object}
 \usage{
-vertices(sc, simplices = NULL)
+sc_vertices(sc, simplices = NULL)
 
-simplices(sc, vertices = NULL)
+sc_simplices(sc, vertices = NULL)
+
+sc_faces(sc, vertices = NULL)
+
+sc_has_simplex(sc, ...)
+
+sc_simplex(sc, ...)
+
+sc_intersection(sc, ...)
+
+sc_nearness(sc, ...)
 }
 \arguments{
 \item{sc}{Bipartite \link[igraph:igraph]{igraph::igraph} object, representing a simplicial
 complex.}
 
 \item{vertices, simplices}{Numeric vertex IDs or character names of nodes of
-\code{sc} whose incident nodes are desired (if any). Defaults to
-\code{NULL}.}
+\code{sc} whose incident nodes are desired (if any). Defaults to \code{NULL}.}
+
+\item{...}{Integer, character, or 'igraph.vs' used to identify nodes of \code{sc}
+corresponding to vertices or simplices, as appropriate.}
 }
 \description{
 These functions return the vertices and the simplices of an
@@ -29,11 +47,12 @@ simplices are taken to be these defining simplicies together with all of
 their \emph{faces} (sub-simplices).
 
 The \code{"type"} attribute takes the values \code{FALSE} on the vertex nodes and
-\code{TRUE} on the simplex nodes. The functions \code{vertices()} and \code{simplices()}
-return the nodes of the 'sc' object corresponding to the vertices and to the
-simplices, respectively. To obtain the vertices in a specific set of
-simplices or the simplices containing a specific set of vertices, pass the
-indices of these simplices or vertices to the corresponding arguments.
+\code{TRUE} on the simplex nodes. The functions \code{sc_vertices()} and
+\code{sc_simplices()} return the nodes of the 'sc' object corresponding to the
+vertices and to the simplices, respectively. To obtain the vertices in a
+specific set of simplices or the simplices containing a specific set of
+vertices, pass the indices of these simplices or vertices to the
+corresponding arguments.
 }
 \examples{
 # load data
@@ -42,8 +61,8 @@ data(wiki_sc)
 print(wiki_sc)
 plot(wiki_sc, vertex.label = NA)
 # vertices and simplices
-vertices(wiki_sc)
-simplices(wiki_sc)
-vertices(wiki_sc, simplices = letters[1:3])
-simplices(wiki_sc, vertices = 1:5)
+sc_vertices(wiki_sc)
+sc_simplices(wiki_sc)
+sc_vertices(wiki_sc, simplices = letters[1:3])
+sc_simplices(wiki_sc, vertices = 1:5)
 }
