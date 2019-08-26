@@ -4,6 +4,8 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+**Note:** Development of this package has been discontinued. A convenient, elegant, and compact R package for analyzing simplicial complexes can be found in [Matt Piekenbrock's **simplextree**](https://github.com/peekxc/simplextree).
+
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -12,6 +14,7 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
+
 # **sc**: simplicial complexes encoded as bipartite graphs
 
 **sc** is a convenience package for encoding simplicial complexes in R as bipartite graphs using the **igraph** package. It is intended for temporary use, until superior functionality and perforance are achieved by other medium-level packages, for example an R interface to [the GUDHI C++ library](http://gudhi.gforge.inria.fr/) --- or until i become aware of them!
@@ -36,6 +39,6 @@ data(wiki_sc)
 print(wiki_sc)
 plot(wiki_sc, vertex.label = NA)
 # vertices and simplices
-vertices(wiki_sc)
-simplices(wiki_sc)
+sc_vertices(wiki_sc)
+sc_simplices(wiki_sc)
 ```
